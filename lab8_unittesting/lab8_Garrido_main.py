@@ -23,7 +23,10 @@ class TestCalculation(unittest.Testcase):
         self.assertEqual(calculations.multiplythreenumbers(2,3,4),24)
         self.assertEqual(calculations.multiplythreenumbers(0),0)
 
-
+    def test_division(self):
+        self.assertEqual(calculations.dividetwonumbers(8,4),2)
+        self.assertAlmostEqual(calculations.dividetwonumbers(9,2),4.5)
+        self.assertIsNone(calculations.dividetwonumbers(9,0))
 
 if __name__ == "__main__":
     unittest.main()

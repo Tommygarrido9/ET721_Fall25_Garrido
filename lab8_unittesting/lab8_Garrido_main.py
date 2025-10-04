@@ -44,7 +44,7 @@ print("\n ---- EXERCISE! ----")
 #Test a sequence of deposits and withdrawals to ensure correct balance calculations. 
 class TestBankAccount(unittest.TestCase):
     def setUp(self):
-        self.account = bankaccount.BankAccount("123456", "Tommy Garrido", 5000)
+        self.account = bankaccount.BankAccount("Tommy Garrido", 5000)
     def test_initial_balance(self):
         self.assertEqual(self.account.balance, 5000)
     def test_deposit(self):
@@ -54,8 +54,7 @@ class TestBankAccount(unittest.TestCase):
         self.account.withdraw(500)
         self.assertEqual(self.account.balance, 4500)
     def test_overdrawl(self):
-        result = self.account.withdraw(6000)
-        self.assertEqual(result, "ERROR! You are overdrawing!")
+        self.account.withdraw(6000)
     def test_sequence(self):
         self.account.deposit(3400)
         self.account.withdraw(2000)

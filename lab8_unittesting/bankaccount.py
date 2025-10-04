@@ -1,20 +1,21 @@
-class BankAccount(object):
-    def __init__(self, account_number, account_holder, balance=0.0):
-        self.account_number = account_number
-        self.account_holder = account_holder
+class BankAccount:
+    def __init__(self, owner, balance=0):
+        self.owner = owner
         self.balance = balance
 
-    # method to add the deposited amount of money into the account
     def deposit(self, amount):
+        if amount <= 0:
+            raise ValueError("Deposit amount must be positive!")
         self.balance += amount
-        if(amount < 0):
-            return "ERROR! You cannot deposit negative dollars!"
-        return self.balance
-    # method to subtract the withdrawn amount of money from the account 
+
     def withdraw(self, amount):
+        if amount > self.balance:
+            raise ValueError("Insufficient funds for this withdrawal!")
+
+        if amount <= 0:
+            raise ValueError("Withdrawal amount must be positive!")
+
         self.balance -= amount
-        if(amount > self.balance):
-            return "ERROR! You are overdrawing!"
-        elif(amount < 0):
-            return "ERROR! You cannot withdraw negative dollars!"
+
+    def get_balance(self):
         return self.balance

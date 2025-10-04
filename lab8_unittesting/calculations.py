@@ -12,6 +12,7 @@ def dividetwonumbers(n1,n2):
         return n1/n2
     except ZeroDivisionError:
         print("ERROR! Can't divide by zero")
+        return -1
     except ValueError:
         print("ERROR! Not a numerical value")
     except:

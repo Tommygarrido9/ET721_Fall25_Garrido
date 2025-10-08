@@ -86,4 +86,4 @@ for email in users:
 
 for domain, count in email_count.items():
     print(f"{domain} appears {count} times")
-        
+    print(f"{domain} appears {count} times")
